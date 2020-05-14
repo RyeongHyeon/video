@@ -45,6 +45,13 @@ public class VideoService {
         BeanUtils.copyProperties(this, uploadedVideo);
         uploadedVideo.publishAfterCommit();
 
+
+        try {
+            Thread.currentThread().sleep((long) (400 + Math.random() * 220));
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+
         System.out.println(("**********동영상이 업로드되었습니다**********"));
     }
 
